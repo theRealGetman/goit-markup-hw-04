@@ -442,7 +442,6 @@ button {
 .footer .container {
   justify-items: start;
   display: flex;
-  margin: 0 24px;
   align-items: baseline;
 }
 

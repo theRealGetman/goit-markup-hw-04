@@ -218,6 +218,11 @@ button {
     var(--transition-timing-function);
 }
 
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--ocean);
+}
+
 .social-icon {
   fill: var(--cloud);
 }
@@ -366,11 +371,6 @@ button {
   box-shadow: var(--card-shadow);
   border-radius: 0px 0px 4px 4px;
   text-align: center;
-}
-
-.team-item:focus .social-link,
-.team-item:hover .social-link {
-  background-color: var(--ocean);
 }
 
 .team-item-text {

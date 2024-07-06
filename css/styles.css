@@ -137,7 +137,7 @@ button {
   padding: 16px 32px;
 
   border: none;
-  background: var(--iris);
+  background-color: var(--iris);
   color: var(--white);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 
@@ -146,12 +146,13 @@ button {
   line-height: 1.5;
   letter-spacing: 0.04em;
 
-  transition: background var(--transition-time) var(--transition-timing-function);
+  transition: background-color var(--transition-time)
+    var(--transition-timing-function);
 }
 
 .button:hover,
 .button:focus {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 .logo {
@@ -195,19 +196,28 @@ button {
 
 .social-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 24px;
 }
-.social-icon-container {
+
+.social-item {
+  width: 40px;
+  height: 40px;
+}
+
+.social-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
+
   border-radius: 50%;
   background-color: var(--iris);
   transition: background-color var(--transition-time)
     var(--transition-timing-function);
 }
+
 .social-icon {
   fill: var(--cloud);
 }
@@ -216,6 +226,8 @@ button {
 /* #region Header */
 .header {
   border-bottom: 1px solid var(--cornflower);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -256,6 +268,7 @@ button {
 .nav-link.active::after {
   position: absolute;
   top: calc(100% - 4px);
+  bottom: -1px;
   content: "";
 
   display: block;
@@ -287,19 +300,16 @@ button {
 
 /* #region Hero */
 .hero {
-  background-color: var(--navy-blue);
-}
-
-.hero .wrapper {
+  max-width: 1440px;
   padding: 188px 0;
+  margin: 0 auto;
 
+  background-color: var(--navy-blue);
   background-image: linear-gradient(var(--grey), var(--grey)),
     url("../images/hero/img-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  max-width: 1440px;
-  margin: 0 auto;
 }
 
 .hero-title {
@@ -322,20 +332,15 @@ button {
 
 /* #region Services */
 .service-icon-container {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 264px;
   height: 112px;
   border: 1px solid var(--light-slate);
   border-radius: 4px;
   background: var(--cloud);
   margin-bottom: 8px;
-}
-
-.service-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .service-item-title {
@@ -363,8 +368,8 @@ button {
   text-align: center;
 }
 
-.team-item:focus .social-icon-container,
-.team-item:hover .social-icon-container {
+.team-item:focus .social-link,
+.team-item:hover .social-link {
   background-color: var(--ocean);
 }
 
@@ -401,6 +406,9 @@ button {
   width: 100%;
   height: 100%;
   background-color: var(--iris);
+  color: var(--cloud);
+  padding: 40px 32px;
+
   transform: translateY(100%);
   transition: transform var(--transition-time) var(--transition-timing-function);
 }
@@ -408,11 +416,6 @@ button {
 .portfolio-item:hover .overlay,
 .portfolio-item:focus .overlay {
   transform: translateY(0);
-}
-
-.overlay-text {
-  color: var(--cloud);
-  padding: 40px 32px;
 }
 
 .card-content {
@@ -439,8 +442,12 @@ button {
 .footer .container {
   justify-items: start;
   display: flex;
-  gap: 120px;
   margin: 0 24px;
+  align-items: baseline;
+}
+
+.footer-logo-container {
+  margin-right: 120px;
 }
 
 .footer .logo {
@@ -473,8 +480,8 @@ button {
   gap: 16px;
 }
 
-.footer-socials .social-icon-container:hover,
-.footer-socials .social-icon-container:focus {
+.footer-socials .social-link:hover,
+.footer-socials .social-link:focus {
   background-color: var(--green);
 }
 /* #endregion */
